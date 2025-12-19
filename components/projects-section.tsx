@@ -116,22 +116,6 @@ const projects: Project[] = [
     github: "https://github.com/username/project",
     demo: "https://demo.example.com",
   },
-  {
-    id: "ml-4",
-    title: {
-      es: "Sistema de Recomendaciones",
-      en: "Recommendation System",
-    },
-    description: {
-      es: "Sistema de recomendación híbrido usando filtrado colaborativo y content-based filtering. Aumentó engagement 40%.",
-      en: "Hybrid recommendation system using collaborative filtering and content-based filtering. Increased engagement by 40%.",
-    },
-    category: "ml-engineering",
-    tags: ["Scikit-learn", "Pandas", "Redis", "PostgreSQL"],
-    image: "/recommendation-system-algorithm-visualization.jpg",
-    github: "https://github.com/username/project",
-    demo: "https://demo.example.com",
-  },
 ]
 
 export function ProjectsSection() {
@@ -184,9 +168,9 @@ export function ProjectsSection() {
           {filteredProjects.map((project) => (
             <Card
               key={project.id}
-              className="group relative overflow-hidden border-primary/20 bg-card/50 hover:border-primary/50 transition-all glow-border"
+              className="group relative overflow-hidden border-primary/20 bg-card/50 hover:border-primary/50 transition-all glow-border-subtle flex flex-col h-[680px]"
             >
-              <div className="relative h-48 w-full overflow-hidden bg-secondary">
+              <div className="relative h-48 w-full overflow-hidden bg-secondary flex-shrink-0">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title[language]}
@@ -195,7 +179,7 @@ export function ProjectsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 {/* Project Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-2 h-2 rounded-full bg-primary animate-pulse mt-2" />
@@ -234,15 +218,42 @@ export function ProjectsSection() {
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.description[language]}</p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-6 min-h-[80px]">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs rounded-md bg-secondary border border-primary/10 text-primary font-mono"
+                      className="px-3 py-1 text-xs rounded-md bg-secondary border border-primary/10 text-primary font-mono h-fit"
                     >
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full bg-primary/10 border-primary hover:bg-primary hover:text-black transition-all glow-border-subtle font-mono text-xs sm:text-sm"
+                      >
+                        <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 flex-shrink-0" />
+                        <span className="truncate">{language === "es" ? "GitHub" : "GitHub Code"}</span>
+                      </Button>
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full bg-primary/10 border-primary hover:bg-primary hover:text-black transition-all glow-border-subtle font-mono text-xs sm:text-sm"
+                      >
+                        <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 flex-shrink-0" />
+                        <span className="truncate">{language === "es" ? "Demo" : "Demo"}</span>
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </div>
             </Card>

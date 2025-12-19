@@ -60,18 +60,26 @@ const translations: Record<Language, Record<string, string>> = {
     // Tech Stack
     "tech.title": "Tech",
     "tech.subtitle": "Herramientas y tecnologías que domino para crear soluciones de datos y ML",
-    "tech.de": "DATA_ENGINEERING",
-    "tech.ml": "MACHINE_LEARNING",
+    "tech.cat.cloud": "Computación en Nube & DevOps",
+    "tech.cat.version": "Control de Versiones & Contenedores",
+    "tech.cat.deml": "Ingeniería de Datos & Machine Learning",
+    "tech.cat.streaming": "Pipelines de Datos & Streaming",
+    "tech.cat.mlops": "MLOps & Ciclo de Vida de Modelos",
+    "tech.cat.databases": "Bases de Datos & Data Warehouses",
+    "tech.cat.os": "Sistemas Operativos & Shell",
+    "tech.cat.ides": "Entornos de Desarrollo (IDEs)",
+    "tech.cat.backend": "Backend & Desarrollo Web",
+    "tech.cat.design": "Diseño & Gráficos",
 
     // Projects
-    "projects.title": "Featured",
+    "projects.title": "Destacados",
     "projects.subtitle": "Explora mis proyectos en Data Engineering y Machine Learning",
-    "projects.de": "DATA_ENGINEERING",
-    "projects.ml": "ML_ENGINEERING",
+    "projects.de": "INGENIERÍA_DE_DATOS",
+    "projects.ml": "INGENIERÍA_DE_ML",
     "projects.cta": "¿Interesado en colaborar?",
     "projects.viewAll": "Ver todos los proyectos →",
-    "projects.github": "Ver código en GitHub",
-    "projects.demo": "Ver demostración",
+    "projects.github": "Código GitHub",
+    "projects.demo": "Demostración",
 
     // Architecture
     "arch.title": "Diseño de Arquitecturas",
@@ -94,6 +102,15 @@ const translations: Record<Language, Record<string, string>> = {
     "edu.title": "Formación",
     "edu.linkedin.notice": "Para más detalles sobre mi formación y certificaciones, visita mi perfil de",
     "edu.linkedin.link": "LinkedIn",
+
+    // Footer
+    "footer.description":
+      "Data Engineer y ML Engineer especializado en transformar datos en soluciones escalables de inteligencia artificial.",
+    "footer.copyright": "© 2025 Julian Steban Ruiz Benavides. Todos los derechos reservados.",
+    "footer.built": "Construido con",
+    "footer.privacy":
+      "Este sitio respeta tu privacidad. No se recopilan datos personales sin consentimiento explícito.",
+    "footer.ventures.title": "Emprendimientos",
   },
   en: {
     // Navigation
@@ -124,8 +141,16 @@ const translations: Record<Language, Record<string, string>> = {
     // Tech Stack
     "tech.title": "Tech",
     "tech.subtitle": "Tools and technologies I master to create data and ML solutions",
-    "tech.de": "DATA_ENGINEERING",
-    "tech.ml": "MACHINE_LEARNING",
+    "tech.cat.cloud": "Cloud Computing & DevOps",
+    "tech.cat.version": "Version Control & Containerization",
+    "tech.cat.deml": "Data Engineering & Machine Learning",
+    "tech.cat.streaming": "Data Pipelines & Streaming",
+    "tech.cat.mlops": "MLOps & Model Lifecycle",
+    "tech.cat.databases": "Databases & Data Warehouses",
+    "tech.cat.os": "Operating Systems & Shell",
+    "tech.cat.ides": "Development Environments (IDEs)",
+    "tech.cat.backend": "Backend & Web Development",
+    "tech.cat.design": "Design & Graphics",
 
     // Projects
     "projects.title": "Featured",
@@ -134,8 +159,8 @@ const translations: Record<Language, Record<string, string>> = {
     "projects.ml": "ML_ENGINEERING",
     "projects.cta": "Interested in collaborating?",
     "projects.viewAll": "View all projects →",
-    "projects.github": "View code on GitHub",
-    "projects.demo": "View demonstration",
+    "projects.github": "GitHub Code",
+    "projects.demo": "Demo",
 
     // Architecture
     "arch.title": "Architecture Design",
@@ -158,5 +183,13 @@ const translations: Record<Language, Record<string, string>> = {
     "edu.title": "Education",
     "edu.linkedin.notice": "For more details about my education and certifications, visit my",
     "edu.linkedin.link": "LinkedIn profile",
+
+    // Footer
+    "footer.description":
+      "Data Engineer and ML Engineer specialized in transforming data into scalable artificial intelligence solutions.",
+    "footer.copyright": "© 2025 Julian Steban Ruiz Benavides. All rights reserved.",
+    "footer.built": "Built with",
+    "footer.privacy": "This site respects your privacy. No personal data is collected without explicit consent.",
+    "footer.ventures.title": "Ventures",
   },
 }

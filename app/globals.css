@@ -135,6 +135,16 @@
   box-shadow: 0 0 15px oklch(0.75 0.2 155 / 0.3), inset 0 0 15px oklch(0.75 0.2 155 / 0.1);
 }
 
+/* Agregando glow-border-subtle para los bloques de sección */
+.glow-border-subtle {
+  box-shadow: 0 0 20px oklch(0.75 0.2 155 / 0.15), inset 0 0 30px oklch(0.75 0.2 155 / 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-border-subtle:hover {
+  box-shadow: 0 0 30px oklch(0.75 0.2 155 / 0.25), inset 0 0 40px oklch(0.75 0.2 155 / 0.08);
+}
+
 .scan-line {
   position: relative;
   overflow: hidden;
