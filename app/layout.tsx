@@ -1,20 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Orbitron, Space_Mono } from "next/font/google"
+import { ABeeZee } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { I18nProvider } from "@/lib/i18n-context"
 
-/* Fuentes futuristas para el portfolio */
-const _orbitron = Orbitron({
+/* Fuentes para el portfolio */
+const _abeezee = ABeeZee({
+  weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-orbitron",
-})
-
-const _spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-space-mono",
+  variable: "--font-abeezee",
 })
 
 export const metadata: Metadata = {
@@ -37,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`font-sans antialiased`}>
+      <body className={`${_abeezee.className} antialiased`}>
         <I18nProvider>{children}</I18nProvider>
         <Analytics />
       </body>

@@ -1,3 +1,5 @@
+import { GlobalBackground } from "@/components/GlobalBackground"
+import { BottomBlur } from "@/components/BottomBlur"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { ExperienceSection } from "@/components/experience-section"
@@ -11,32 +13,46 @@ import { Footer } from "@/components/footer"
 export default function Home() {
   return (
     <>
+      {/* Fondo animado */}
+      <GlobalBackground />
+
+      {/* Blur de transición inferior */}
+      <BottomBlur />
+
       <Navigation />
-      <main className="min-h-screen bg-background pt-16">
+
+      <main className="relative z-10 min-h-screen pt-16">
         <div className="scan-line">
           <div className="mx-auto max-w-7xl px-4 md:px-8">
-            <div id="inicio">
+            <section id="inicio">
               <HeroSection />
-            </div>
-            <div id="proyectos" className="border border-primary/20 rounded-2xl p-6 md:p-8 mb-12 glow-border-subtle">
+            </section>
+
+            <section id="proyectos" className="section-box">
               <ProjectsSection />
-            </div>
-            <div id="arquitectura" className="border border-primary/20 rounded-2xl p-6 md:p-8 mb-12 glow-border-subtle">
+            </section>
+
+            <section id="arquitectura" className="section-box">
               <ArchitectureSection />
-            </div>
-            <div id="tecnologias" className="border border-primary/20 rounded-2xl p-6 md:p-8 mb-12 glow-border-subtle">
+            </section>
+
+            <section id="tecnologias" className="section-box">
               <TechStack />
-            </div>
-            <div id="experiencia" className="border border-primary/20 rounded-2xl p-6 md:p-8 mb-12 glow-border-subtle">
+            </section>
+
+            <section id="experiencia" className="section-box">
               <ExperienceSection />
-            </div>
-            <div id="formacion" className="border border-primary/20 rounded-2xl p-6 md:p-8 mb-12 glow-border-subtle">
+            </section>
+
+            <section id="formacion" className="section-box">
               <EducationSection />
-            </div>
+            </section>
+
             <CTASection />
           </div>
         </div>
       </main>
+
       <Footer />
     </>
   )

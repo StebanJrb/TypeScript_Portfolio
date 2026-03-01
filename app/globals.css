@@ -4,80 +4,82 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Tema futurista con negro, blanco y verde tech */
-  --background: oklch(0.05 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.08 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.08 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.75 0.2 155);
-  --primary-foreground: oklch(0.05 0 0);
-  --secondary: oklch(0.15 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.18 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.75 0.2 155);
-  --accent-foreground: oklch(0.05 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.2 0 0);
-  --ring: oklch(0.75 0.2 155);
-  --chart-1: oklch(0.75 0.2 155);
-  --chart-2: oklch(0.65 0.15 155);
-  --chart-3: oklch(0.55 0.1 155);
-  --chart-4: oklch(0.85 0.25 155);
-  --chart-5: oklch(0.45 0.1 155);
+  /* Tema usando paleta proporcionada */
+
+  --foreground: #e2e8f0;
+  --card: #ffffff;
+  --card-foreground: #1e375a;
+  --popover: #ffffff;
+  --popover-foreground: #1e375a;
+  --primary: #00abe4;
+  --primary-foreground: #ffffff;
+  --secondary: #1e375a;
+  --secondary-foreground: #ffffff;
+  --muted: #f0f6fc;
+  --muted-foreground: #94a3b8;
+  --accent: #00abe4;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4d4f;
+  /* mantengo un rojo para acciones destructivas */
+  --destructive-foreground: #ffffff;
+  --border: #1e375a;
+  --input: #ffffff;
+  --ring: #00abe4;
+  --chart-1: #00abe4;
+  --chart-2: #1e375a;
+  --chart-3: #f0f6fc;
+  --chart-4: #00abe4;
+  --chart-5: #1e375a;
   --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #1e375a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00abe4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #00abe4;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1e375a;
+  --sidebar-ring: #00abe4;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: #1e375a;
+  --foreground: #e2e8f0;
+  --card: #12263f;
+  /* tono más oscuro derivado */
+  --card-foreground: #ffffff;
+  --popover: #12263f;
+  --popover-foreground: #ffffff;
+  --primary: #00abe4;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f6fc;
+  --secondary-foreground: #1e375a;
+  --muted: #12263f;
+  --muted-foreground: #94a3b8;
+  --accent: #00abe4;
+  --accent-foreground: #ffffff;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #ffffff;
+  --border: #0f2a44;
+  --input: #12263f;
+  --ring: #00abe4;
+  --chart-1: #00abe4;
+  --chart-2: #f0f6fc;
+  --chart-3: #ffffff;
+  --chart-4: #00abe4;
+  --chart-5: #f0f6fc;
+  --sidebar: #12263f;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00abe4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #00abe4;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #0f2a44;
+  --sidebar-ring: #00abe4;
 }
 
 @theme inline {
-  --font-sans: "Orbitron", "Geist", "Geist Fallback";
-  --font-mono: "Space Mono", "Geist Mono", "Geist Mono Fallback";
+  --font-sans: var(--font-abeezee), "Geist", "Geist Fallback";
+  --font-mono: var(--font-abeezee), "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -120,29 +122,39 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    background: transparent;
   }
 }
 
-/* Efectos de glow futuristas */
+/* Efectos de glow futuristas (usando azul proporcionado) */
 .glow-text {
-  text-shadow: 0 0 10px oklch(0.75 0.2 155 / 0.5), 0 0 20px oklch(0.75 0.2 155 / 0.3), 0 0 30px
-    oklch(0.75 0.2 155 / 0.2);
+  text-shadow:
+    0 0 10px rgba(0, 171, 228, 0.5),
+    0 0 20px rgba(0, 171, 228, 0.3),
+    0 0 30px rgba(0, 171, 228, 0.2);
 }
 
 .glow-border {
-  box-shadow: 0 0 15px oklch(0.75 0.2 155 / 0.3), inset 0 0 15px oklch(0.75 0.2 155 / 0.1);
+  box-shadow:
+    0 0 15px rgba(0, 171, 228, 0.3),
+    inset 0 0 15px rgba(0, 171, 228, 0.1);
 }
 
 /* Agregando glow-border-subtle para los bloques de sección */
 .glow-border-subtle {
-  box-shadow: 0 0 20px oklch(0.75 0.2 155 / 0.15), inset 0 0 30px oklch(0.75 0.2 155 / 0.05);
+  box-shadow:
+    0 0 20px rgba(0, 171, 228, 0.15),
+    inset 0 0 30px rgba(0, 171, 228, 0.05);
   transition: box-shadow 0.3s ease;
 }
 
 .glow-border-subtle:hover {
-  box-shadow: 0 0 30px oklch(0.75 0.2 155 / 0.25), inset 0 0 40px oklch(0.75 0.2 155 / 0.08);
+  box-shadow:
+    0 0 30px rgba(0, 171, 228, 0.25),
+    inset 0 0 40px rgba(0, 171, 228, 0.08);
 }
 
 .scan-line {
@@ -157,7 +169,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, oklch(0.75 0.2 155 / 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 171, 228, 0.8), transparent);
   animation: scan 3s linear infinite;
 }
 
@@ -165,35 +177,74 @@
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(200vh);
   }
 }
 
-/* Added custom scrollbar styles matching the futuristic theme */
+/* Added custom scrollbar styles matching the new palette */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: oklch(0.08 0 0);
+  background: #f0f6fc;
   border-radius: 4px;
-  border: 1px solid oklch(0.2 0 0);
+  border: 1px solid #1e375a;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: oklch(0.75 0.2 155 / 0.3);
+  background: rgba(0, 171, 228, 0.3);
   border-radius: 4px;
-  border: 1px solid oklch(0.75 0.2 155 / 0.5);
+  border: 1px solid rgba(0, 171, 228, 0.5);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.75 0.2 155 / 0.5);
-  box-shadow: 0 0 10px oklch(0.75 0.2 155 / 0.3);
+  background: rgba(0, 171, 228, 0.5);
+  box-shadow: 0 0 10px rgba(0, 171, 228, 0.3);
 }
 
 /* Firefox scrollbar */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: oklch(0.75 0.2 155 / 0.3) oklch(0.08 0 0);
+  scrollbar-color: rgba(0, 171, 228, 0.3) #f0f6fc;
+}
+
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0));
+}
+
+/* Section Box Styling para delimitar las áreas */
+.section-box {
+  position: relative;
+  z-index: 10;
+  border: 2px solid #ffffff;
+  background: rgba(6, 15, 35, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.section-box:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), inset 0 0 30px rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .section-box {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+  }
 }

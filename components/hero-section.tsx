@@ -3,15 +3,14 @@
 import { Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/lib/i18n-context"
-import { PlayStationBackground } from "@/components/playstation-background"
+import GradualBlur from "@/components/GradualBlur"
 
 export function HeroSection() {
   const { t } = useI18n()
 
   return (
     <section className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
-      <PlayStationBackground />
-
+      {/* CONTENIDO */}
       <div className="relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-8 lg:gap-12 items-center mb-12 lg:mb-16">
           {/* Columna izquierda: Foto y Nombre */}
@@ -45,10 +44,12 @@ export function HeroSection() {
 
         {/* Contenido central */}
         <div className="text-center max-w-5xl mx-auto">
-          {/* Badge de presentación */}
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8 glow-border">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs md:text-sm font-mono text-primary">{t("hero.badge")}</span>
+            <span className="text-xs md:text-sm font-mono text-primary">
+              {t("hero.badge")}
+            </span>
           </div>
 
           {/* Descripción */}
@@ -56,17 +57,20 @@ export function HeroSection() {
             {t("hero.description")}
           </p>
 
+          {/* Botones */}
           <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 px-4">
             <Button size="lg" className="glow-border font-mono text-sm md:text-base">
               <Mail className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               {t("hero.contact")}
             </Button>
+
             <Button size="lg" className="glow-border font-mono text-sm md:text-base" asChild>
               <a href="https://linkedin.com/in/julianruiz" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 LinkedIn
               </a>
             </Button>
+
             <Button
               size="lg"
               variant="outline"
@@ -78,6 +82,7 @@ export function HeroSection() {
                 GitHub
               </a>
             </Button>
+
             <Button
               size="lg"
               variant="outline"
@@ -91,6 +96,7 @@ export function HeroSection() {
                 Kaggle
               </a>
             </Button>
+
             <Button
               size="lg"
               variant="outline"
