@@ -78,7 +78,7 @@ const projects: Project[] = [
     },
     category: "ml-engineering",
     tags: ["MLOps", "CI/CD", "Drift Monitoring", "Champion/Challenger"],
-    image: "/MLOPs Pipeline.png",
+    image: "/MLOPs PipeLine.png",
     github: "https://github.com/StebanJrb/MLOps-Pipeline-CI-CD-Champion-Challenger-Drift-Monitoring",
     demo: "https://demo.example.com",
   },
