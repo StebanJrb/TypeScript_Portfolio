@@ -2,7 +2,6 @@
 
 import { Box, GitBranch, Shield, Zap } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
-import GlassSurface from "@/components/GlassSurface"
 
 const architecturesData = {
   es: [
@@ -227,39 +226,33 @@ export function ArchitectureSection() {
           {architectures.map((arch, index) => {
             const Icon = arch.icon
             return (
-              <div key={index} className="group relative w-full rounded-2xl overflow-hidden">
-                <GlassSurface width="100%" height="auto" borderRadius={24} blur={15} opacity={0.65} brightness={45} borderWidth={0} mixBlendMode="normal">
-                  <div className="relative p-8 w-full text-white mix-blend-plus-lighter">
-                    {/* Header */}
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-14 h-14 rounded-lg bg-emerald-400/20 flex items-center justify-center border border-emerald-400/40 shadow-inner">
-                        <Icon className="w-7 h-7 text-emerald-400 drop-shadow-md" />
-                      </div>
-                      <h3 className="font-heading text-2xl text-white font-bold">{arch.title}</h3>
-                    </div>
-
-                    {/* Content Grid */}
-                    <div className="grid md:grid-cols-3 gap-6">
-                      {arch.sections.map((section, sectionIndex) => (
-                        <div key={sectionIndex} className="space-y-4">
-                          <div className="flex items-center gap-2 mb-4">
-                            <Zap className="w-4 h-4 text-emerald-400 drop-shadow-md" />
-                            <h4 className="font-heading text-lg text-emerald-400 font-semibold">{section.subtitle}</h4>
-                          </div>
-
-                          <div className="space-y-3">
-                            {section.points.map((point, pointIndex) => (
-                              <div key={pointIndex} className="flex items-start gap-3 group/item">
-                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shadow-[0_0_6px_rgba(34,197,94,0.6)]" />
-                                <p className="text-white/90 text-sm leading-relaxed flex-1">{point}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+              <div key={index} className="border border-white/10 bg-black/50 rounded-2xl p-8 w-full text-white">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-lg bg-emerald-400/20 flex items-center justify-center border border-emerald-400/40 shadow-inner">
+                    <Icon className="w-7 h-7 text-emerald-400 drop-shadow-md" />
                   </div>
-                </GlassSurface>
+                  <h3 className="font-heading text-2xl text-white font-bold">{arch.title}</h3>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  {arch.sections.map((section, sectionIndex) => (
+                    <div key={sectionIndex} className="space-y-4">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Zap className="w-4 h-4 text-emerald-400 drop-shadow-md" />
+                        <h4 className="font-heading text-lg text-emerald-400 font-semibold">{section.subtitle}</h4>
+                      </div>
+
+                      <div className="space-y-3">
+                        {section.points.map((point, pointIndex) => (
+                          <div key={pointIndex} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shadow-[0_0_6px_rgba(34,197,94,0.6)]" />
+                            <p className="text-white/90 text-sm leading-relaxed flex-1">{point}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )
           })}

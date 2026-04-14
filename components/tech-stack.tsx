@@ -60,10 +60,10 @@ function MarqueeRow({
   const animClass = direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
 
   return (
-    <div className="overflow-hidden w-full relative">
+    <div className="overflow-hidden w-full relative rounded-2xl">
       {/* Edge fade masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none rounded-l-2xl" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none rounded-r-2xl" />
 
       <div
         className={`flex w-max ${animClass}`}

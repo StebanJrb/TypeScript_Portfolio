@@ -131,7 +131,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.error.general": "No se pudo enviar el mensaje. Intenta nuevamente más tarde.",
 
     // Footer
-    "footer.description":"Diseñado y desarrollado por mi con herramientas de IA. Ingeniero en Sistemas y Telecomunicaciones de la Universidad Piloto de Colombia",
+    "footer.description":"Ingeniero en Sistemas y Telecomunicaciones de la Universidad Piloto de Colombia",
     "footer.copyright": "© 2026 Steban Ruiz Benavides. Todos los derechos reservados.",
     "footer.built": "Construido con",
     "footer.privacy":
@@ -237,7 +237,7 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.error.general": "Unable to send the message. Please try again later.",
 
     // Footer
-    "footer.description":"Designed and developed by me with IA Tools. Systems and Telecommunications Engineer from Universidad Piloto de Colombia",
+    "footer.description":"Systems and Telecommunications Engineer from Universidad Piloto de Colombia",
     "footer.copyright": "© 2026 Steban Ruiz Benavides. All rights reserved.",
     "footer.built": "Built with",
     "footer.privacy": "This site respects your privacy. No personal data is collected without explicit consent.",

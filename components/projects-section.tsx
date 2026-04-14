@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { ExternalLink, Github } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
-import GlassSurface from "@/components/GlassSurface"
 
 type ProjectCategory = "data-engineering" | "ml-engineering"
 
@@ -136,119 +135,105 @@ export function ProjectsSection() {
 
         {/* Category Buttons */}
         <div className="flex justify-center items-center gap-4">
-          <button onClick={() => setActiveCategory("data-engineering")}>
-            <GlassSurface
-              width="auto" height="auto" borderRadius={16} borderWidth={0}
-              opacity={activeCategory === "data-engineering" ? 0.8 : 0.4}
-              brightness={activeCategory === "data-engineering" ? 70 : 40}
-              mixBlendMode="normal"
-            >
-              <div className={`px-6 py-3 font-mono transition-colors ${activeCategory === "data-engineering" ? "text-white" : "text-white/60 hover:text-white"}`}>
-                {t("projects.de")}
-              </div>
-            </GlassSurface>
+          <button
+            onClick={() => setActiveCategory("data-engineering")}
+            className={`px-6 py-3 font-mono rounded-2xl border transition-colors ${
+              activeCategory === "data-engineering"
+                ? "bg-black/60 border-white/20 text-white"
+                : "bg-black/30 border-white/10 text-white/60 hover:text-white hover:border-white/20"
+            }`}
+          >
+            {t("projects.de")}
           </button>
-          <button onClick={() => setActiveCategory("ml-engineering")}>
-            <GlassSurface
-              width="auto" height="auto" borderRadius={16} borderWidth={0}
-              opacity={activeCategory === "ml-engineering" ? 0.8 : 0.4}
-              brightness={activeCategory === "ml-engineering" ? 70 : 40}
-              mixBlendMode="normal"
-            >
-              <div className={`px-6 py-3 font-mono transition-colors ${activeCategory === "ml-engineering" ? "text-white" : "text-white/60 hover:text-white"}`}>
-                {t("projects.ml")}
-              </div>
-            </GlassSurface>
+          <button
+            onClick={() => setActiveCategory("ml-engineering")}
+            className={`px-6 py-3 font-mono rounded-2xl border transition-colors ${
+              activeCategory === "ml-engineering"
+                ? "bg-black/60 border-white/20 text-white"
+                : "bg-black/30 border-white/10 text-white/60 hover:text-white hover:border-white/20"
+            }`}
+          >
+            {t("projects.ml")}
           </button>
         </div>
 
         {/* Projects List */}
         <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="group relative overflow-hidden rounded-2xl">
-              <GlassSurface width="100%" height="100%" borderRadius={16} blur={12} opacity={0.65} brightness={45} borderWidth={0} mixBlendMode="normal">
-                <div className="flex flex-col w-full">
-                  <div className="relative h-72 w-full overflow-hidden flex-shrink-0">
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title[language]}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                  </div>
+            <div key={project.id} className="group border border-white/10 bg-black/50 rounded-2xl overflow-hidden flex flex-col">
+              <div className="relative h-72 w-full overflow-hidden flex-shrink-0">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title[language]}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+              </div>
 
-                  <div className="p-6 flex flex-col relative z-10 w-full text-white mix-blend-plus-lighter">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mt-2" />
-                      <div className="flex gap-2">
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            className="p-2 rounded-md hover:bg-white/10 transition-colors"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title={t("projects.github")}
-                          >
-                            <Github className="h-4 w-4 text-white/70 hover:text-white" />
-                          </a>
-                        )}
-                        {project.demo && (
-                          <a
-                            href={project.demo}
-                            className="p-2 rounded-md hover:bg-white/10 transition-colors"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title={t("projects.demo")}
-                          >
-                            <ExternalLink className="h-4 w-4 text-white/70 hover:text-white" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-emerald-400 transition-colors">
-                      {project.title[language]}
-                    </h3>
-
-                    <p className="text-base text-white/80 mb-4 leading-relaxed max-w-4xl">
-                      {project.description[language]}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map((tag) => (
-                        <GlassSurface key={tag} width="auto" height="auto" borderRadius={8} blur={5} opacity={0.5} brightness={60} mixBlendMode="normal">
-                          <span className="px-3 py-1 block text-xs text-white font-mono h-fit">
-                            {tag}
-                          </span>
-                        </GlassSurface>
-                      ))}
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1 block">
-                          <GlassSurface width="100%" height="auto" borderRadius={12} blur={5} opacity={0.6} brightness={60} mixBlendMode="normal" className="hover:scale-105 transition-transform">
-                            <div className="flex items-center justify-center py-3 px-4 w-full h-full font-mono text-sm text-white">
-                              <Github className="h-4 w-4 mr-2 flex-shrink-0" />
-                              <span className="truncate">{language === "es" ? "GitHub" : "GitHub Code"}</span>
-                            </div>
-                          </GlassSurface>
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1 block">
-                          <GlassSurface width="100%" height="auto" borderRadius={12} blur={5} opacity={0.6} brightness={60} mixBlendMode="normal" className="hover:scale-105 transition-transform">
-                            <div className="flex items-center justify-center py-3 px-4 w-full h-full font-mono text-sm text-white">
-                              <ExternalLink className="h-4 w-4 mr-2 flex-shrink-0" />
-                              <span className="truncate">{language === "es" ? "Demo" : "Demo"}</span>
-                            </div>
-                          </GlassSurface>
-                        </a>
-                      )}
-                    </div>
+              <div className="p-6 flex flex-col flex-1 text-white">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mt-2" />
+                  <div className="flex gap-2">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        className="p-2 rounded-md hover:bg-white/10 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={t("projects.github")}
+                      >
+                        <Github className="h-4 w-4 text-white/70 hover:text-white" />
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        className="p-2 rounded-md hover:bg-white/10 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={t("projects.demo")}
+                      >
+                        <ExternalLink className="h-4 w-4 text-white/70 hover:text-white" />
+                      </a>
+                    )}
                   </div>
                 </div>
-              </GlassSurface>
+
+                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-emerald-400 transition-colors">
+                  {project.title[language]}
+                </h3>
+
+                <p className="text-base text-white/80 mb-4 leading-relaxed max-w-4xl">
+                  {project.description[language]}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-3 py-1 text-xs text-white/70 font-mono border border-white/10 bg-white/5 rounded-lg">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <div className="flex items-center justify-center py-3 px-4 w-full font-mono text-sm text-white border border-white/10 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
+                        <Github className="h-4 w-4 mr-2 flex-shrink-0" />
+                        <span className="truncate">{language === "es" ? "GitHub" : "GitHub Code"}</span>
+                      </div>
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <div className="flex items-center justify-center py-3 px-4 w-full font-mono text-sm text-white border border-white/10 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
+                        <ExternalLink className="h-4 w-4 mr-2 flex-shrink-0" />
+                        <span className="truncate">Demo</span>
+                      </div>
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
           ))}
         </div>

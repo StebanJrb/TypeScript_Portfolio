@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { GraduationCap, ExternalLink } from "lucide-react"
 import { useI18n } from "@/lib/i18n-context"
-import GlassSurface from "@/components/GlassSurface"
 
 interface Education {
   institution: string
@@ -85,79 +84,68 @@ export function EducationSection() {
 
         <div className="space-y-6">
           {education.map((edu, index) => (
-            <div key={index} className="group relative w-full rounded-2xl overflow-hidden">
-              <GlassSurface width="100%" height="auto" borderRadius={24} blur={15} opacity={0.65} brightness={45} borderWidth={0} mixBlendMode="normal">
-                <div className="relative p-8 w-full text-white mix-blend-plus-lighter">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-6 gap-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-red-400/20 flex items-center justify-center border border-red-400/40 shadow-inner flex-shrink-0">
-                        <GraduationCap className="w-6 h-6 text-red-400 drop-shadow-md" />
-                      </div>
-                      <div>
-                        <h3 className="font-heading text-2xl text-white font-bold">{edu.degree}</h3>
-                        <p className="text-red-400 font-mono text-base font-medium">{edu.institution}</p>
-                      </div>
-                    </div>
-
-                    <GlassSurface width="auto" height="auto" borderRadius={12} blur={5} opacity={0.6} brightness={60} mixBlendMode="normal" className="flex-shrink-0 sm:self-start">
-                      <span className="font-mono text-sm text-white px-4 py-2 block font-medium whitespace-nowrap">
-                        {edu.period}
-                      </span>
-                    </GlassSurface>
+            <div key={index} className="border border-white/10 bg-black/50 rounded-2xl p-8 w-full text-white">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-6 gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-red-400/20 flex items-center justify-center border border-red-400/40 shadow-inner flex-shrink-0">
+                    <GraduationCap className="w-6 h-6 text-red-400 drop-shadow-md" />
                   </div>
-
-                  <p className="text-white/90 text-sm mb-6 leading-relaxed bg-black/10 p-4 rounded-xl border border-white/10">{edu.description}</p>
-
-                  {/* Focus area tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {edu.focusAreas.map((area, i) => (
-                      <span key={i} className="text-[11px] font-mono bg-white/5 text-white/60 border border-white/10 px-3 py-1 rounded-full">
-                        {area}
-                      </span>
-                    ))}
+                  <div>
+                    <h3 className="font-heading text-2xl text-white font-bold">{edu.degree}</h3>
+                    <p className="text-red-400 font-mono text-base font-medium">{edu.institution}</p>
                   </div>
+                </div>
 
-                  {/* Activities — collapsible */}
-                  {edu.activities && (
-                    <div className="border-t border-white/10 pt-4">
-                      <button
-                        onClick={() => toggleActivity(index)}
-                        className="flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white/80 transition-colors"
-                      >
-                        <span className={`transition-transform duration-200 text-[10px] ${openActivities.has(index) ? "rotate-90" : ""}`}>
-                          ▶
-                        </span>
-                        {openActivities.has(index) ? t("edu.activities.hide") : t("edu.activities.show")}
-                      </button>
-                      {openActivities.has(index) && (
-                        <p className="mt-3 text-white/60 text-xs leading-relaxed font-mono">
-                          {edu.activities}
-                        </p>
-                      )}
-                    </div>
+                <span className="font-mono text-sm text-white px-4 py-2 border border-white/10 bg-white/5 rounded-xl font-medium whitespace-nowrap flex-shrink-0 sm:self-start">
+                  {edu.period}
+                </span>
+              </div>
+
+              <p className="text-white/90 text-sm mb-6 leading-relaxed bg-black/10 p-4 rounded-xl border border-white/10">{edu.description}</p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {edu.focusAreas.map((area, i) => (
+                  <span key={i} className="text-[11px] font-mono bg-white/5 text-white/60 border border-white/10 px-3 py-1 rounded-full">
+                    {area}
+                  </span>
+                ))}
+              </div>
+
+              {edu.activities && (
+                <div className="border-t border-white/10 pt-4">
+                  <button
+                    onClick={() => toggleActivity(index)}
+                    className="flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white/80 transition-colors"
+                  >
+                    <span className={`transition-transform duration-200 text-[10px] ${openActivities.has(index) ? "rotate-90" : ""}`}>
+                      ▶
+                    </span>
+                    {openActivities.has(index) ? t("edu.activities.hide") : t("edu.activities.show")}
+                  </button>
+                  {openActivities.has(index) && (
+                    <p className="mt-3 text-white/60 text-xs leading-relaxed font-mono">
+                      {edu.activities}
+                    </p>
                   )}
                 </div>
-              </GlassSurface>
+              )}
             </div>
           ))}
         </div>
 
-        {/* LinkedIn notice at the bottom */}
         <div className="mt-12 text-center flex justify-center">
-          <GlassSurface width="auto" height="auto" borderRadius={24} blur={15} opacity={0.65} brightness={45} borderWidth={0} mixBlendMode="normal">
-            <div className="inline-flex items-center gap-3 px-8 py-4 text-white mix-blend-plus-lighter group">
-              <span className="text-white/80 text-sm font-medium">{t("edu.linkedin.notice")}</span>
-              <a
-                href="https://www.linkedin.com/in/stebanjrb/details/certifications/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-red-400 hover:text-white transition-colors flex items-center gap-2 font-mono text-sm font-bold ml-2 bg-red-400/20 px-3 py-1.5 rounded-lg border border-red-400/40"
-              >
-                {t("edu.linkedin.link")}
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-            </div>
-          </GlassSurface>
+          <div className="inline-flex items-center gap-3 px-8 py-4 border border-white/10 bg-black/50 rounded-3xl text-white">
+            <span className="text-white/80 text-sm font-medium">{t("edu.linkedin.notice")}</span>
+            <a
+              href="https://www.linkedin.com/in/stebanjrb/details/certifications/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-400 hover:text-white transition-colors flex items-center gap-2 font-mono text-sm font-bold ml-2 bg-red-400/20 px-3 py-1.5 rounded-lg border border-red-400/40"
+            >
+              {t("edu.linkedin.link")}
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

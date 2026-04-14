@@ -8,7 +8,7 @@ export function AboutPreviewSection() {
 
   return (
     <section className="relative">
-      <div className="border border-white/15 bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 transition-all hover:border-white/25">
+      <div className="border border-white/15 bg-black/50 backdrop-blur-md rounded-3xl p-8 md:p-12 transition-all hover:border-white/25">
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center md:items-start">
 
           {/* Photo */}
@@ -37,7 +37,7 @@ export function AboutPreviewSection() {
             {/* Availability badge below photo */}
             <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-3 py-1.5 rounded-full">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-              <span className="text-xs font-mono text-white/70">{t("about.badge")}</span>
+              <span className="text-xs font-mono text-white">{t("about.badge")}</span>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export function AboutPreviewSection() {
               {t("about.title")}
             </h2>
 
-            <p className="text-base md:text-lg text-white/70 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-base md:text-lg text-white leading-relaxed mb-8 max-w-2xl">
               {t("about.description")}
             </p>
 
@@ -62,7 +62,7 @@ export function AboutPreviewSection() {
                   className="text-center border border-white/10 bg-white/5 rounded-2xl p-4 hover:border-primary/30 hover:bg-primary/5 transition-all"
                 >
                   <div className="text-2xl font-bold text-primary font-mono">{stat.value}</div>
-                  <div className="text-xs text-white/60 mt-1 font-mono leading-tight">{stat.label}</div>
+                  <div className="text-xs text-white mt-1 font-mono leading-tight">{stat.label}</div>
                 </div>
               ))}
             </div>

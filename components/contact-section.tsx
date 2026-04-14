@@ -86,7 +86,7 @@ export function ContactSection() {
   const inputClass =
     "w-full bg-white/[0.06] border border-white/15 rounded-xl px-4 py-3 text-white placeholder:text-white/30 font-mono text-sm focus:outline-none focus:border-primary focus:bg-white/10 focus:ring-2 focus:ring-primary/20 transition-all duration-200"
 
-  const labelClass = "block text-xs font-mono text-white/50 mb-1.5 uppercase tracking-wider"
+  const labelClass = "block text-xs font-mono text-white mb-1.5 uppercase tracking-wider"
 
   const isFormValid =
     form.name.trim().length > 0 &&
@@ -95,14 +95,14 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="relative">
-      <div className="border border-white/15 bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 transition-all hover:border-white/25">
+      <div className="border border-white/15 bg-black/50 backdrop-blur-md rounded-3xl p-8 md:p-12 transition-all hover:border-white/25">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               {t("contact.title")}
             </h2>
-            <p className="text-white/60 font-mono text-sm">
+            <p className="text-white font-mono text-sm">
               {t("contact.subtitle")}
             </p>
           </div>
@@ -114,7 +114,7 @@ export function ContactSection() {
                 <CheckCircle className="relative w-16 h-16 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-bold text-white">{t("contact.success.title")}</h3>
-              <p className="text-white/60 max-w-sm">{t("contact.success.message")}</p>
+              <p className="text-white max-w-sm">{t("contact.success.message")}</p>
               <button
                 onClick={handleReset}
                 className="mt-4 text-xs font-mono text-white/40 hover:text-white/70 underline underline-offset-4 transition-colors"

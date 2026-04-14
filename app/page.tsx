@@ -22,12 +22,15 @@ export default function Home() {
     <>
       <div className="fixed inset-0 z-0">
         {activeTab === "home" && (
-          <LiquidChrome
-            baseColor={[0, 0.1, 0.4]}
-            speed={0.3}
-            amplitude={0.4}
-            interactive={false}
-          />
+          <>
+            <LiquidChrome
+              baseColor={[0, 0.1, 0.4]}
+              speed={0.3}
+              amplitude={0.4}
+              interactive={false}
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </>
         )}
         {activeTab === "solutions" && (
           <LiquidChrome
