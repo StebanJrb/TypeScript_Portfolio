@@ -9,7 +9,7 @@ export function AboutPreviewSection() {
   return (
     <section className="relative">
       <div className="border border-white/15 bg-black/50 backdrop-blur-md rounded-3xl p-8 md:p-12 transition-all hover:border-white/25">
-        <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center md:items-start">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-24 items-center md:items-start">
 
           {/* Photo */}
           <div className="flex-shrink-0 flex flex-col items-center gap-4">
@@ -17,17 +17,18 @@ export function AboutPreviewSection() {
               {/* Outer glow ring */}
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl scale-110" />
               {/* Border ring */}
-              <div className="relative w-40 h-40 md:w-52 md:h-52 rounded-full border-2 border-primary/40 p-1 bg-white/5">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full border-2 border-primary/40 p-1 bg-white/5">
                 {/* Placeholder — always rendered below the image */}
                 <div className="absolute inset-0 rounded-full flex flex-col items-center justify-center bg-white/5">
-                  <User className="w-14 h-14 text-white/30" />
-                  <span className="text-xs text-white/30 mt-2 font-mono">profile.jpg</span>
+                  <User className="w-16 h-16 text-white/30" />
+                  <span className="text-xs text-white/30 mt-2 font-mono">Foto_perfil.jpg</span>
                 </div>
                 {/* Image — covers placeholder when it loads; hidden via onError when 404 */}
                 <img
-                  src="/profile.jpg"
+                  src="/Foto_perfil.jpg"
                   alt="Profile photo"
                   className="absolute inset-0 w-full h-full rounded-full object-cover z-10"
+                  style={{ objectPosition: 'center 30%' }}
                   onError={(e) => {
                     e.currentTarget.style.display = "none"
                   }}
